@@ -15,7 +15,7 @@ typedef struct Compromisso {
     struct Compromisso *prox;
 } Compromisso;
 
-// ---------- Função para desenhar a menina ----------
+// Função para desenhar o gatinho 
 void desenhogatinho() {
 
     printf("        ^   ^    \ \n");
@@ -25,7 +25,7 @@ void desenhogatinho() {
     printf("   < Agenda Fofa > \n\n");
 }
 
-// ---------- Inserir compromisso ----------
+//  Inserir compromisso 
 Compromisso* inserir(Compromisso *lista) {
     Compromisso *novo = (Compromisso*) malloc(sizeof(Compromisso));
     if (!novo) {
@@ -52,7 +52,7 @@ Compromisso* inserir(Compromisso *lista) {
     return novo;
 }
 
-// ---------- Listar compromissos ----------
+// Listar compromissos
 void listar(Compromisso *lista) {
     if (!lista) {
         printf("Nenhum compromisso salvo.\n");
@@ -65,7 +65,7 @@ void listar(Compromisso *lista) {
     }
 }
 
-// ---------- Buscar por data ----------
+// Buscar por data
 void buscar(Compromisso *lista) {
     if (!lista) {
         printf("Nenhum compromisso salvo.\n");
@@ -87,7 +87,7 @@ void buscar(Compromisso *lista) {
         printf("Nenhum compromisso encontrado nessa data.\n");
 }
 
-// ---------- Remover compromisso ----------
+// Remover compromisso
 Compromisso* remover(Compromisso *lista) {
     if (!lista) {
         printf("Nenhum compromisso para remover.\n");
@@ -116,7 +116,7 @@ Compromisso* remover(Compromisso *lista) {
     return lista;
 }
 
-// ---------- Salvar em arquivo ----------
+// Salvar em arquivo 
 void salvar(Compromisso *lista) {
     FILE *arq = fopen("agenda.txt", "w");
     if (!arq) {
@@ -130,7 +130,7 @@ void salvar(Compromisso *lista) {
     printf("Dados salvos em 'agenda.txt'!\n");
 }
 
-// ---------- Carregar do arquivo ----------
+// Carregar do arquivo 
 Compromisso* carregar() {
     FILE *arq = fopen("agenda.txt", "r");
     if (!arq) return NULL;
@@ -151,7 +151,7 @@ Compromisso* carregar() {
     return lista;
 }
 
-// ---------- Programa principal ----------
+// Programa principal 
 int main() {
     #ifdef _WIN32
     SetConsoleOutputCP(65001); // pesquisei isso para conseguir colocar acentos, UTF-8 no output
@@ -194,3 +194,4 @@ int main() {
     printf("\n Até mais!\n");
     return 0;
 }
+
